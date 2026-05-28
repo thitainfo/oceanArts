@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OceanArts — Creative Design Studio
+
+A production-grade marketing website for **OceanArts**, a creative graphic design and remote staffing studio based in Houston, TX — serving businesses across USA, Canada, UK, and Australia.
+
+---
+
+## Tech Stack
+
+| Tool | Version |
+|---|---|
+| Next.js (App Router) | 16 |
+| TypeScript | 5 |
+| Tailwind CSS | v4 |
+| shadcn/ui (base-ui) | latest |
+| Lucide React | latest |
+| Yarn | 4 (node-modules linker) |
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Hero, Stats, Services, Portfolio preview, Testimonials, How It Works, Free Trial form |
+| `/about` | Founder story, Stats card, Values grid, Global presence |
+| `/services` | Service cards, Why choose us, Service area cities, FAQ accordion |
+| `/portfolio` | Category-filtered project grid (client component) |
+| `/contact` | Contact info + Free trial form with file upload |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
+# Install dependencies
+yarn install
+
+# Start dev server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+yarn build
+
+# Lint
+yarn lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── page.tsx           # Home
+├── about/page.tsx
+├── services/page.tsx
+├── portfolio/page.tsx  # "use client" — filter state
+├── contact/page.tsx
+└── globals.css         # Tailwind v4 @theme config + font vars
 
-## Learn More
+components/
+├── layout/
+│   ├── navbar.tsx      # "use client" — scroll + mobile menu
+│   └── footer.tsx
+└── forms/
+    └── trial-form.tsx  # "use client" — form state + file upload
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Accent:** `cyan-600` (#0891B2)
+- **Dark sections:** `#0B1929` (hero, CTA banners)
+- **Headings:** Archivo (`font-heading`)
+- **Body:** Space Grotesk (`font-sans`)
+- **Section spacing:** `py-24 lg:py-32`
+- **Container:** `max-w-7xl mx-auto px-6 lg:px-8`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deploy instantly on [Vercel](https://vercel.com):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+vercel --prod
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Or connect the GitHub repository to Vercel for automatic deployments on every push.
+
+## Client
+
+**OceanArts** (rebranded from Vector Print Studio)  
+Virtual Office: Houston, TX, USA  
+Production Studio: Virpur, Gujarat, India  
+Contact: hello@vectorprintindia.in · +91 81415 95426
+
+---
+
+Built with precision. © 2025 OceanArts. All Rights Reserved.
